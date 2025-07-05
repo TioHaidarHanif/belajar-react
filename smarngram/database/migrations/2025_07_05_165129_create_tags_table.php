@@ -15,9 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('description')->nullable();
-            $table->integer('usage_count')->default(0);
-            $table->boolean('is_featured')->default(false);
+            $table->timestamps();
+        });
+        
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('post_id')->constrained()->onDelete('cascade');
+            $table->foreignId('tag_id')->constrained()->onDelete('cascade');
+            $table->unique(['post_id', 'tag_id']);
             $table->timestamps();
         });
     }
@@ -27,6 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('post_tag');
         Schema::dropIfExists('tags');
     }
 };

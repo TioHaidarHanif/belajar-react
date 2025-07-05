@@ -1,34 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react'
-import LandingPage from './pages/LandingPage';
-import Navbar from './components/Navbar';
-import './App.css'
-
-function Counter() {
-  const [count, setCount] = useState(0);
- useEffect(() => {
-  // ini kayak efek samping nya  
-  console.log('Component Ter update!');
-    
-  });
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      Ter klik {count} times
-    </button>
-  );
-}
+import React from "react";
+// import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+<div className="App">
+    <Navbar />
+    <main>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/counter" element={<Counter />} />
+        <Route path="/" element={ <Home/> } />
+        <Route path="/about" element= {<About  />} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
-    </Router>
-  );
-}
+    </main>
+    <Footer />
+</div>
+);
 
+}
 export default App;
+
+/**
+ * aku mau buat apa aja?
+ * landing page
+ * about
+ * profile
+ * itu dulu hehehe
+ * oia sama navbar dan footer sederhana
+ * 
+ */

@@ -3,8 +3,8 @@ import { Link } from '@inertiajs/react';
 
 export default function GuestLayout({ children }) {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 flex flex-col items-center pt-6 sm:justify-center sm:pt-0">
-            <div className="w-full sm:max-w-md px-6 py-4 bg-white shadow-lg rounded-xl sm:rounded-2xl mt-6 overflow-hidden transform transition-all">
+        <div className="min-h-screen bg-secondary-bg flex flex-col items-center pt-6 sm:justify-center sm:pt-0">
+            <div className="w-full sm:max-w-md px-6 py-4 glossy-card mt-6 transform transition-all">
                 <div className="flex justify-center mb-6 mt-4">
                     <Link href="/" className="inline-flex items-center">
                         <ApplicationLogo className="h-16 w-auto" />
@@ -16,7 +16,7 @@ export default function GuestLayout({ children }) {
                 </div>
             </div>
             
-            <div className="mt-8 text-center text-sm text-gray-500">
+            <div className="mt-8 text-center text-sm text-secondary-text">
                 <p>© 2023 Smartgram. All rights reserved.</p>
                 <p className="mt-1">The social media platform for e-social learning</p>
             </div>

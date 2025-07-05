@@ -2,24 +2,28 @@ export default function ApplicationLogo(props) {
     return (
         <svg
             {...props}
-            viewBox="0 0 120 40"
+            viewBox="0 0 160 48"
             xmlns="http://www.w3.org/2000/svg"
         >
+            <defs>
+                <linearGradient id="instagramGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#f09433" />
+                    <stop offset="25%" stopColor="#e6683c" />
+                    <stop offset="50%" stopColor="#dc2743" />
+                    <stop offset="75%" stopColor="#cc2366" />
+                    <stop offset="100%" stopColor="#bc1888" />
+                </linearGradient>
+            </defs>
             <g>
                 <path 
-                    d="M12 10C12 8.89543 12.8954 8 14 8H36C37.1046 8 38 8.89543 38 10V30C38 31.1046 37.1046 32 36 32H14C12.8954 32 12 31.1046 12 30V10Z" 
-                    fill="#4F46E5" 
+                    d="M10 8C10 6.89543 10.8954 6 12 6H36C37.1046 6 38 6.89543 38 8V28C38 29.1046 37.1046 30 36 30H12C10.8954 30 10 29.1046 10 28V8Z" 
+                    fill="url(#instagramGradient)" 
                 />
-                <path 
-                    d="M20 16C20 15.4477 20.4477 15 21 15H29C29.5523 15 30 15.4477 30 16V24C30 24.5523 29.5523 25 29 25H21C20.4477 25 20 24.5523 20 24V16Z" 
-                    fill="white" 
-                />
-                <path 
-                    d="M45 12.5C45 11.6716 45.6716 11 46.5 11H64.5C65.3284 11 66 11.6716 66 12.5V27.5C66 28.3284 65.3284 29 64.5 29H46.5C45.6716 29 45 28.3284 45 27.5V12.5Z" 
-                    fill="#4F46E5" 
-                />
-                <text x="52" y="22" fontFamily="Arial" fontSize="8" fill="white" fontWeight="bold">SMART</text>
-                <text x="70" y="22" fontFamily="Arial" fontSize="8" fill="#4F46E5" fontWeight="bold">GRAM</text>
+                <circle cx="24" cy="18" r="6" fill="white" />
+                <circle cx="24" cy="18" r="4" fill="url(#instagramGradient)" />
+                <circle cx="31" cy="11" r="1.5" fill="white" />
+                
+                <text x="42" y="22" fontFamily="Arial" fontSize="16" fill="#262626" fontWeight="bold" letterSpacing="0.5">Smartgram</text>
             </g>
         </svg>
     );
