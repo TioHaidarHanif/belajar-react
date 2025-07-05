@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      let stateStore = "";
+
+      function useState(initialValue) {
+       
+        if (stateStore === "") {
+          stateStore= initialValue;
+        }
+
+        function setState(newValue) {
+          stateStore = newValue;
+          render(); 
+        }
+
+        return [stateStore, setState];
+      }
+
+      // 🔹 Our fake component function
+      function CounterComponent() {
+        const [count, setCount] = useState(9); // just like React!
+
+        const app = document.getElementById("app");
+        app.innerHTML = `
+          <h1>Count: ${count}</h1>
+          <button id="inc">Increase</button>
+          <button id="dec">Decrease</button>
+        `;
+
+        document.getElementById("inc").onclick = () => setCount(count + 1);
+        document.getElementById("dec").onclick = () => setCount(count - 1);
+      }
+
+      // 🔹 Render function
+      function render() {
+        CounterComponent(); // Re-run the component function
+      }
+
+      // 🔹 Initial render
+      render();
+    </script>
+  </body>
+</html>
